@@ -79,6 +79,8 @@ public class Project {
         //driver.findElement(By.id("moduleTab_9_Leads")).click();         
         //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@id='adspan_1e367a61-8a0f-33f3-4e6f-5db0c113de32']/child::*")));
         //WebElement AdditionalInfo=driver.findElement(By.xpath("//span[@id='adspan_1e367a61-8a0f-33f3-4e6f-5db0c113de32']/child::*"));
+        driver.close();
+        driver.quit();
     }
     
 }
