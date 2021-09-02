@@ -45,7 +45,30 @@ public class Project {
         WebElement password=driver.findElement(By.id("txtPassword"));         
         userName.sendKeys("orange");         
         password.sendKeys("orangepassword123");         
-        driver.findElement(By.id("btnLogin")).click();   
+        driver.findElement(By.id("btnLogin")).click();
+        
+        // User is clicked on PIM Tab on Home Page
+        
+        driver.findElement(By.xpath("//b[contains(text(),'PIM')]")).click();
+        //Adding Employee
+        driver.findElement(By.cssSelector("cssSelector#btnAdd")).click();
+        // Enter User Details
+        
+        driver.findElement(By.cssSelector("cssSelector#menu_pim_viewEmployeeList")).getText(); 
+        System.out.println(driver.findElement(By.cssSelector("cssSelector#menu_pim_viewEmployeeList")).getText());
+      
+        driver.findElement(By.cssSelector("cssSelector#firstName")).sendKeys("FirstNameTom");
+        driver.findElement(By.cssSelector("cssSelector#lastName")).sendKeys("LastNameShankar");
+        
+        // Saving employee data
+        
+        driver.findElement(By.cssSelector("cssSelector#btnSave")).click();
+        
+        // Verify that New employee data is added successfully.
+        String Employee_Id = driver.findElement(By.cssSelector("cssSelector#personal_txtEmployeeId")).getText();
+        System.out.println("New Employee_Id is : " +Employee_Id);
+        
+        
         
         // Home page is launched
         
